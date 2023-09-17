@@ -11,24 +11,30 @@
       integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,500;6..12,600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div id="preloader"></div>
-
-    <div id="toogle">
-      <i class="indicator"></i>
-    </div>
+    <!-- <div id="preloader"></div> -->
+    <script src="index.js"></script>
     <div class="nav-bar">
       <ul>
-        <button type="button" class="btn">Home</button>
-        <button type="button" class="btn">About Us</button>
-        <button type="button" class="btn">Contact Us</button>
-        <button type="button" class="btn">Location</button>
+        <a class="btn">Home</a>
+        <a class="btn">About Us</a>
+        <a class="btn">Contact Us</a>
+        <a class="btn">Location</a>
       </ul>
+      <div id="toggle">
+        <i class="indicator"></i>
+      </div>
     </div>
 
     <div class="form-outline">
-      <h1>Login Form</h1>
+      <h1 class="login-form-title">Login to my website</h1>
       <div class="input">
         <i class="bi bi-person"></i>
         <input type="name" placeholder="Name" id="nameInput" />
@@ -53,85 +59,6 @@
       >
         Style Me
       </button>
-    </div>
-
-    <div>
-      <script>
-        function passwordworking() {
-          let icon1 = document.getElementById("takeinput");
-          let icon2 = document.getElementById("eye1");
-          let icon3 = document.getElementById("eye2");
-
-          if (icon1.type === "password") {
-            icon1.type = "text";
-            icon2.style.display = "block";
-            icon3.style.display = "none";
-          } else {
-            icon1.type = "password";
-            icon2.style.display = "none";
-            icon3.style.display = "block";
-          }
-        }
-        function validateForm() {
-          const nameInput = document.getElementById("nameInput");
-          const emailInput = document.getElementById("emailInput");
-          const passwordInput = document.getElementById("takeinput");
-
-          if (nameInput.value.trim() === "") {
-            alert("Name field is required");
-            return;
-          }
-
-          if (emailInput.value.trim() === "") {
-            alert("Email field is required");
-            return;
-          }
-
-          if (passwordInput.value.trim() === "") {
-            alert("Password field is required");
-            return;
-          }
-
-          alert("Form submitted successfully!");
-        }
-        const styleButton = document.getElementById("stylebutton");
-
-        function handleButtonClick() {
-          styleButton.classList.toggle("clicked-button");
-        }
-
-        styleButton.addEventListener("click", handleButtonClick);
-
-        const body = document.querySelector("body");
-        const buttons = document.querySelectorAll("button");
-
-        const toogle = document.getElementById("toogle");
-
-        toogle.onclick = function () {
-          console.log("toogle clicked");
-          toogle.classList.toggle("active");
-          if (toogle.classList.contains("active")) {
-            body.classList.add("active");
-            buttons.forEach((button) => {
-              button.classList.add("active");
-            });
-          } else {
-            body.classList.remove("active");
-            buttons.forEach((button) => {
-              button.classList.remove("active");
-            });
-          }
-        };
-
-        var loadeimage = document.getElementById("preloader");
-        document.addEventListener("DOMContentLoaded", function () {
-          window.addEventListener("load", function () {
-            setTimeout(function () {
-              loadeimage.style.display = "none";
-            }, 2000); // Adjust the time duration
-          });
-        });
-      </script>
     </div>
   </body>
 </html>
